@@ -1,2 +1,1 @@
-# fullstack_repository
-java
+# Update .gitignore
