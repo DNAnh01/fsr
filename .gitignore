@@ -2,6 +2,8 @@
 .metadata
 target
 */target
+*/image
+image
 
 # Ignore Eclipse configuration file
 *.project
