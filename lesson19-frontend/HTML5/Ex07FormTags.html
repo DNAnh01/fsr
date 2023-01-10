@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex07 Form Tags</title>
+	<link rel="icon" href="../static/images/header.png" type="image/png">
+    <style>
+        .page-title {
+            color: green;
+        }
+        table tbody tr td {
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2 class="page-title">Welcome to JAVA14 web page</h2>
+    </header>
+    <hr>
+    <main>
+        <form>
+            <table>
+                <tbody>
+                    <tr>
+                        <td><label>First Name:</label></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Last Name:</label></td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td><label>Gender</label></td>
+                        <td>
+                            <label>Male</label><input type="radio" name="gender-group">
+                            <label>Female</label><input type="radio" name="gender-group">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Age:</label></td>
+                        <td><input type="number" min="0" max="100"></td>
+                    </tr>
+                    <tr>
+                        <td><label>University:</label></td>
+                        <td>
+                            <select>
+                                <option>Bach Khoa</option>
+                                <option>Kinh Te</option>
+                                <option>Duy Tan</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Languages:</label></td>
+                        <td>
+                            <label>JAVA:</label>
+                            <input type="checkbox" name="language">
+                            <label>PHP:</label>
+                            <input type="checkbox" name="language">
+                            <label>NodeJS:</label>
+                            <input type="checkbox" name="language">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>Date of birth:</label>
+                        </td>
+                        <td>
+                            <input type="date" pattern="dd/MM/yyyy">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Email:</label></td>
+                        <td><input type="email"></td>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><input type="password"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit">
+                        </td>
+                        <td>
+                            <input type="reset">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
