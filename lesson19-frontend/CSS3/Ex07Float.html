@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 - Float</title>
+    <!-- bình thường thì thẻ block nó sẽ chiếm hết dòng. Khi ta set css float thì 
+         thẻ đó chỉ chiếm bằng nội dung của nó thôi  -->
+    <style>
+        .lorem20 {
+            color: blue;
+        }
+        .lorem30 {
+            color: red;
+        }
+
+        .block {
+            width: 90px;
+            height: 130px;
+            background: rgb(105, 166, 105);
+            float: left;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        .clearfix {
+            /*
+				previous elemnt float left --> clear left
+				normal: both;
+			*/
+            clear: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="block">
+        <!-- background-block define in css -->
+    </div>
+    <div class="lorem20">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta libero tempora, architecto iure repellendus ea quos magnam nemo vitae praesentium.</div>
+    <div class="lorem30 clearfix">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel eaque aperiam, placeat cum labore necessitatibus accusantium mollitia pariatur est nisi in laudantium rerum reprehenderit dolorum consequatur deserunt ad corporis hic.</div>
+</body>
+</html>

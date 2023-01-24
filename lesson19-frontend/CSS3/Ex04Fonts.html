@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 - Fonts</title>
+    <style>
+        li:nth-child(1) {
+            color: red;
+            font-family: Tahoma;
+            font-weight: 650;
+            font-style: normal;
+        }
+        li:nth-child(2) {
+            color: green;
+            font-family: Times New 'Times New Roman', Times, serif;
+            font-weight: 550;
+            font-style: italic;
+        }
+        li:nth-child(3) {
+            color: blue;
+            font-family: sans-serif;
+            font-weight: 450;
+            font-style: oblique;
+        }
+
+        li {
+            margin-top: 10px;
+        }
+        ol li:nth-child(1) {
+            color: red;
+            text-decoration: underline;
+            text-transform: capitalize;
+        }
+        ol li:nth-child(2) {
+            color: green;
+            text-decoration: overline;
+            text-transform: lowercase;
+        }
+        ol li:nth-child(3) {
+            color: blue;
+            text-decoration: line-through;
+            text-transform: uppercase;
+        }
+        ol li:nth-child(4) {
+            color: black;
+            text-decoration: none;
+            text-transform: none;
+        }
+    </style>
+</head>
+<body>
+    <p>JAVA14 - Welcome to CSS section</p> 
+    <hr>
+    <ul>
+        <li>Tahoma</li>
+        <li>Times New Roman</li>
+        <li>sans-serifs</li>
+    </ul>
+    <hr>
+    <ol>
+        <li>text-decoration: underline, text-transform: capitalize</li>
+        <li>text-decoration: overline, text-transform: lowercase</li>
+        <li>text-decoration: line-through, text-transform: uppercase</li>
+        <li>text-decoration: none, text-transform: none</li>
+    </ol>
+</body>
+</html>

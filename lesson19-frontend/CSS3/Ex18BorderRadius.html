@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS3 - Border Radius</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style_sample.css">
+    <style>
+        body {
+            padding: 100px;
+            background-color: rgb(218, 202, 202);
+        }
+        .block-green {
+            border: 2px solid rgb(54, 51, 51);
+            border-radius: 20px;
+            margin: 10px;
+        }
+        .block-blue {
+            border: 2px solid rgb(54, 51, 51);
+            border-radius: 50%;
+            margin-left: 40px;
+        }
+        .block-orange {
+            margin-left: 40px;
+        }   
+        div {
+            float: left;
+        }
+        /*[inset] offset-x offset-y blur-radius spread-radius color*/
+        .second {
+            box-shadow: inset 20px 0 50px 20px rgb(45, 40, 40);
+        }
+        .first {
+            box-shadow: 20px 0 5px 5px rgb(45, 40, 40);
+        }
+        .third {
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="block block-green first"></div>
+    <div class="block block-blue second"></div>
+    <div class="block block-orange third"></div>
+</body>
+</html>

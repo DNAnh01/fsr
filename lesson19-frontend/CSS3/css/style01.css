@@ -1,0 +1,8 @@
+.bg-yellow {
+    background-color: yellow;
+    display: inline-block;
+}
+p {
+    color: red !important;
+    /* limited use !important */
+}
