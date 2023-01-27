@@ -6,7 +6,7 @@
 *   **CSS** là ngôn ngữ tạo phong cách cho trang web - Cascading Style Sheet language. Nó dùng để tạo phong cách và định kiểu cho những yếu tố được viết dưới dạng ngôn ngữ đánh dấu, như là HTML.
 *   Những thuộc tính nằm trong 1 thẻ mở của html gọi là attribute
  
-### *CSS in HTML?*S
+### *CSS in HTML?*
 *   **inline** : viết vào luôn trong 1 thẻ mở nằm trong attribute style
 <img src="lesson19-frontend/static/images/InlineCSS.gif" width="600" height="360">
 
@@ -15,9 +15,6 @@
 
 *   **external** : sử dụng 1 file css ở ngoài và link file đó vs file html cần css
 <img src="lesson19-frontend/static/images/ExternalCSS.gif" width="600" height="360">
-
-
-
 
 ### *CSS selector? cách để gọi đến các phần tử trong html để css*
 *   **ID:** Trong một file html không được đặt tên ID trùng nhau
