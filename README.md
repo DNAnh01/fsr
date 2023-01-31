@@ -182,3 +182,56 @@ Priority in CSS?
 *   flex-shrink
 
 <img src="lesson19-frontend/static/images/Flexbox Detail 1.gif" width="600" height="360">
+
+## JAVASCRIPT
+
+    null là có giá trị và mang giá trị là null
+
+    undefined là chưa khởi tạo giá trị cho biến
+
+    Java: Static Type -> bắt lỗi tại compile
+
+    JavaScript: Dynamic Type -> thông thường bắt lỗi tại lúc runtime
+
+
+### *Hoisting*
+
+<img src="lesson19-frontend/static/images/hoisting.gif" width="600" height="360">
+
+<img src="lesson19-frontend/static/images/hoisting1.gif" width="600" height="360">
+
+### *DOM - (Document Object Model)*
+
+    DOM không phải là ngôn ngữ lập trình, DOM chứa các element, muốn truy cập các phần tử trong web page mình sẽ dùng những hàm mà DOM cung cấp
+
+    When a web page is loaded, the browser creates a Document Object Model of the page.
+
+    PAGE = DOM
+
+    The HTML DOM model is constructed as a tree of Objects
+
+    Document contain element tags in HTML page
+
+<img src="lesson19-frontend/static/images/DOM.gif" width="600" height="360">
+
+### *Window Object*
+
+    Trong Window Object có chứa cả thèn Document
+
+<img src="lesson19-frontend/static/images/window object.gif" width="600" height="360">
+
+### *JS Selectors*
+
+<img src="lesson19-frontend/static/images/JS selectors.gif" width="600" height="360">
+
+### *Basic Events*
+
+*   click
+*   contextmenu
+*   mouseover
+*   mousedown
+*   mouseup
+*   keypress
+*   submit
+
+

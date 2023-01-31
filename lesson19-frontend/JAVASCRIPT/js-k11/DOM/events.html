@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events Listener</title>
+    <style>
+        .btn-info {
+            background-color: green;
+            padding: 10px 20px;
+            border: 2px solid black;
+            border-radius: 5px;
+            font-size: 18px;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Events Listener</h2>
+        <button class="btn-info click-me">Click me</button>
+    </main>
+    <script>
+        let component = document.querySelector('.click-me');
+        var countOnClick = 0;
+        component.onclick = function() {
+            alert(`onclick ${countOnClick} st`);
+            countOnClick++;
+        }
+        // khi sử dụng onclick thì nó gần giống như overwrite lại sự kiện nên chỉ thực hiện 
+        // sự kiện sau 
+
+        
+        // var countEventListenerClick = 0;
+        // component.addEventListener('click', function() {
+        //     alert(`event listener ${countEventListenerClick} st`);
+        //     countEventListenerClick++;
+        // });
+    </script>
+</body>
+</html>
