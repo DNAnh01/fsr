@@ -43,16 +43,16 @@
 		let addButton = document.querySelector('.add-button');
 		addButton.addEventListener('click', function() {
 			let taskContent = document.querySelector('.task-content');
-			let todolist = document.querySelector('.todo');
+			let todoList = document.querySelector('.todo');
 			let newTask = createLiTask(taskContent.value);
-			todolist.append(newTask);
+			todoList.append(newTask);
 			taskContent.value = '';
 		})
-		let todolist = document.querySelector('.todo');
+		let todoList = document.querySelector('.todo');
 		let newTask = createLiTask('Task 03: Coffee with friends');
-		todolist.append(newTask);
+		todoList.append(newTask);
 		let task = createLiTask('Task 04: Nothing');
-		todolist.insertBefore(task, todolist.children[todolist.children.length]);
+		todoList.insertBefore(task, todoList.children[todoList.children.length]);
 		function createLiTask(text) {
 			let task = document.createElement('li');
 			task.textContent = text;
