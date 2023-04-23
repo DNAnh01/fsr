@@ -226,7 +226,7 @@ body {
 .page-footer .footer-column .social-network li:hover {
     background-color: #fff;
 }
-.page-footer .footer-column .social-network li:hover a {
+.page-footer .footer-column .social-network li:hover a i{
     color: red;
 }
 .footer-column .copyright {
