@@ -31,3 +31,4 @@ console.log('x4 type: ' + (typeof x));
 x = new Date();
 console.log('x5: ' + x);
 console.log('x5 type: ' + (typeof x));
+
