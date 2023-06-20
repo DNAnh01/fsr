@@ -13,6 +13,12 @@ public class Application {
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = new ClassPathXmlApplicationContext(contextPath);
 
+		ClientService clientServiceX = context.getBean("clientF", ClientService.class);
+		
+		
+		
+		// khi nào application context close thì cái bean đó ms destroy
+		System.out.println("----------1111");
 		String[] beanNames = context.getBeanDefinitionNames();
 
 		for (String beanName : beanNames) {
@@ -41,8 +47,10 @@ public class Application {
 		System.out.println("igB1: " + igB1);
 		
 		ItemGroup igB2 = context.getBean("igB", ItemGroup.class);
-		System.out.println("igB2: " + igB2);
+		System.out.println("igB2: " + igB2); 
 		
+		
+		// destroy beans
 		context.close();
 	}
 }

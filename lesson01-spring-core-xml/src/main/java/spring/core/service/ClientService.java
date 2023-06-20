@@ -17,4 +17,12 @@ public class ClientService {
 	public void clientInfo() {
 		System.out.println("Client info ATZ");
 	}
+	
+	public void initial() {
+		System.out.println("--> ClientService initial");
+	}
+	
+	public void destroy() {
+		System.out.println("--> ClientService destroy");
+	}
 }

@@ -5,6 +5,7 @@
 						http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<import resource="spring-beans-factory.xml"/>
+	<import resource="spring-beans-lifecycle.xml"/>
 
 	<!-- Empty constructor -->
 	<bean id="igA" class="spring.core.bean.ItemGroup"></bean>
