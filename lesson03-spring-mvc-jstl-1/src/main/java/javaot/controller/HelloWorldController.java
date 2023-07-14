@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import static javaot.common.Application.*;
+
 @Controller
 @RequestMapping("helloworld")
 public class HelloWorldController {
@@ -15,7 +17,7 @@ public class HelloWorldController {
 //	@RequestMapping(path = "showForm", method = RequestMethod.GET) 
 	@GetMapping("showForm")
 	public String showHelloWorldForm() {
-		return "helloworld/helloworld-form";
+		return HELLO_WORLD_FORM_PAGE;
 	}
 	
 //	@RequestMapping(path = "processForm", method = RequestMethod.POST)
@@ -24,7 +26,7 @@ public class HelloWorldController {
 							@RequestParam("fullname")String content,
 							Model model) {
 		model.addAttribute("studentName", content.toLowerCase());
-		return "helloworld/helloworld";
+		return HELLO_WORLD_INFO_PAGE;
 	}
 	
 //	@RequestMapping("processForm")

@@ -8,13 +8,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javaot.bean.Customer;
+import static javaot.common.Application.*;
 
 @Controller
 @RequestMapping("customer")
 public class CustomerController {
 	@GetMapping("showForm")
 	public String showCustomerForm() {
-		return "customer/customer-form"; 
+		return CUSTOMER_FORM_PAGE; 
 	}
 	
 	@PostMapping("processForm")
@@ -26,6 +27,6 @@ public class CustomerController {
 		
 		Customer customer = new Customer(firstName, lastName, age);
 		model.addAttribute("customer", customer);
-		return "customer/customer"; 
+		return CUSTOMER_INFO_PAGE; 
 	}
 }

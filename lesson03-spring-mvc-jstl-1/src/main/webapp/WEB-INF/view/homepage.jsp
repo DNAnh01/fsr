@@ -23,6 +23,11 @@
 	<br>
 	<a href="${pageContext.request.contextPath}/student/showForm">Click to show Student Form</a>
 	<hr>
+	
+	<br>
+	<a href="${pageContext.request.contextPath}/student">Show detail student</a>
+	<hr>
+	
 	<h2 class="text-error">All the best</h2>
 </body>
 </html>

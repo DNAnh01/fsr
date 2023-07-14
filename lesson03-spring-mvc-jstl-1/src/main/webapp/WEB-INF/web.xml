@@ -5,11 +5,14 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
 
 	<!--Configure Front Controller | Dispatcher Servlet-->
+	
+	
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
 			<!--Point to real configuration file-->
+			<!-- config location -->
 			<param-name>contextConfigLocation</param-name>
 			<param-value>/WEB-INF/spring-mvc-config.xml</param-value>
 		</init-param>

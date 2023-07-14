@@ -1,5 +1,1 @@
-<html>
-<body>
-<h2>Hello World! 123dasd</h2>
-</body>
-</html>
+<meta http-equiv="refresh" content="0;url=${pageContext.request.contextPath}/home">
