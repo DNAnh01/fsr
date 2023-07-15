@@ -7,6 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>STUDENT INDEX PAGE</title>
+<%-- <link href="${contextPath}/static/css/style.css" rel="stylesheet" type="text/css" /> --%>
 <style>
 /* CSS styles go here */
 table {
@@ -40,7 +41,7 @@ tr:nth-child(even) {
 </style>
 </head>
 <body>
-	<h2>STUDENT INDEX PAGE</h2>
+	<h2 class="header">STUDENT INDEX PAGE</h2>
 
 	<hr>
 	
@@ -54,6 +55,9 @@ tr:nth-child(even) {
 				<th>ID</th>
 				<th>Full Name</th>
 				<th>Age</th>
+				<th>Country</th>
+				<th>Operating system</th>
+				<th>---</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -62,6 +66,9 @@ tr:nth-child(even) {
 					<td>${student.id}</td>
 					<td>${student.fullName}</td>
 					<td>${student.age}</td>
+					<td>${student.country}</td>
+					<td>${student.osAsString}</td>
+					<td><a href="${contextPath}/student/edit?id=${student.id}">EDIT</a></td>
 				</tr>
 			</c:forEach>
 		</tbody>

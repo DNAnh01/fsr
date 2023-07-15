@@ -2,11 +2,17 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="/WEB-INF/taglib/import.jsp"%>
 
+<!-- Using for add, edit page 
+	+ add: show empty form with input
+	+ edit: show from with data of current student
+-->
+
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>STUDENT ADD PAGE</title>
+<title>STUDENT ${title} PAGE</title>
 
 <style>
     body {
@@ -59,17 +65,30 @@
 </style>
 </head>
 <body>
-	<h2>STUDENT ADD PAGE</h2>
+	<h2>STUDENT ${title} PAGE</h2>
 
 	<hr>
-
+	
+	<!-- path >> getter, setter attribute from model attribute -->
+	
 	<form:form action="${contextPath}/student/save" modelAttribute="student" method="POST">
 		<!-- cai save co method la post -->
 		<form:input path="id" placeholder="Id"/>
-		<form:input path="fullName" placeholder="full name"/>
-		<form:input path="age" placeholder="age"/>
+		<form:input path="fullName" placeholder="Full Name"/>
+		<form:input path="age" placeholder="Age"/>
 		
-		<input type="submit" value="Add Student">
+		<form:select path="country">
+			<c:forEach var="countryAsItem" items="${countries}">
+				<form:option value="${countryAsItem}">${countryAsItem}</form:option>
+			</c:forEach>
+		</form:select> <br> <br>
+		
+		<c:forEach var="operatingSystemAsItem" items="${operatingSystems}">
+			<form:checkbox path="operatingSystems" value="${operatingSystemAsItem}" label="${operatingSystemAsItem}"/>
+		</c:forEach> <br> <br>
+		
+		
+		<input type="submit" value="Save Student">
 	</form:form>
 </body>
 </html>

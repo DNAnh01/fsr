@@ -18,6 +18,6 @@ public class Application {
 	// class jv11
 	
 	public static final String STUDENT_INDEX_PAGE = "student/student-index";
-	public static final String STUDENT_ADD_PAGE = "student/student-add";
+	public static final String STUDENT_ADD_EDIT_FORM_PAGE = "student/student-add-edit-form";
 	
 }
