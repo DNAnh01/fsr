@@ -15,8 +15,4 @@ var day = date1.getDate();
 
 console.log(`${day}/${month}/${year}`);
 
-
-
-
-
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date

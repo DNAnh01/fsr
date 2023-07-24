@@ -14,7 +14,7 @@ var myInfo = {
 };
 // thêm thuộc tính mới
 myInfo.email = 'donguyenanh2k1@gmail.com';
-myInfo['phone-number'] = 0852501009;
+myInfo['phone-number'] = '0852501009';
 console.log(myInfo); // {name: 'Nguyen Anh', age: 18, address: 'Quang Nam', email: 'donguyenanh2k1@gmail.com', phone-number: 852501009}
 // lấy val của thuộc tính (key)
 console.log(myInfo.name); // Nguyen Anh

@@ -5,6 +5,8 @@
         2. Sử dụng khi nào?
 
  */
+
+// trong trường hợp ta muốn set thuộc tính mới ở bên ngoài Object constructor 
 function User(firstName, lastName, avatar) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -14,7 +16,7 @@ function User(firstName, lastName, avatar) {
     }
 }
 
-// giúp thêm thuộc tính ở bên ngoài hàm constructor
+// giúp thêm thuộc tính ở bên ngoài hàm constructor 
 // và nó sẽ nằm trong __proto__
 User.prototype.className = 'F8';
 User.prototype.getClassName = function () {  
@@ -29,6 +31,8 @@ user.comment = 'liệu có khóa asp.net ko ad';
 
 console.log(author.className);
 console.log(user);
+
+// khi thêm thuộc tính bằng prototype thì thuộc tính đó sẽ nằm trong [[Prototype]]
 
 
 

@@ -11,4 +11,8 @@ if (!String.prototype.includes) {
         return this.indexOf(search, start) !== -1;
     };
 }
-'Javascript course'.includes('Javascript', 0);
+
+// chuỗi 'Javascript' có nằm trong 'Javascript course' tại vị trí 0 
+var isIncludes = 'Javascript course'.includes('Javascript', 0);
+console.log("🚀 ~ file: 30. Polyfill.js:17 ~ isIncludes:", isIncludes)
+

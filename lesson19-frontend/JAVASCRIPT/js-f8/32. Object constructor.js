@@ -1,6 +1,9 @@
 
 // Object constructor
 
+
+// có thể sử dụng declaration function or expression function để tạo ra object constructor 
+
 function User(firstName, lastName, avatar) {
     // từ khóa this bên ngoài sẽ mô tả những thuộc tính
     // phương thức sẽ có cho đối tượng khi đc khởi tạo từ Object constructor User
@@ -12,7 +15,7 @@ function User(firstName, lastName, avatar) {
         // tuừ khóa this trong này nó thuộc func getName
         // nó sẽ được gọi khi lấy đối tượng gọi đến 
         return `${this.firstName} ${this.lastName}`
-        // lấy đối tượng nào gọi thì nó sẽ được gọi từ đối tượng đó
+        // lấy đối tượng nào gọi thì nó sẽ được gọi từ đối tượng đó (*)
     }
 }
 
