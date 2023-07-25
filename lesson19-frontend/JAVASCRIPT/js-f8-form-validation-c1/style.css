@@ -1,0 +1,87 @@
+/* Reset some default styles */
+body,
+form {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Center the form in the middle of the screen */
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Style the form container */
+.form {
+    width: 350px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style the heading */
+.heading {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Style the description */
+.desc {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+/* Style form group */
+.form-group {
+    margin-bottom: 20px;
+    margin-right: 22px;
+}
+
+/* Style form label */
+.form-label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+/* Style form input */
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* margin-right: 22px; */
+}
+
+
+
+/* Style form message */
+.form-message {
+    display: block;
+    font-size: 14px;
+    color: #f00;
+    margin-top: 5px;
+}
+
+/* Style form submit button */
+.form-submit {
+    background-color: #3b7920;
+    color: #fff;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style form submit button on hover */
+.form-submit:hover {
+    background-color: #33c338;
+}
