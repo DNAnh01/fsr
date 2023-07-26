@@ -1,8 +1,6 @@
-function Validator(formSelector, options) {
-    // gán giá trị mặc định cho tham số (ES5)
-    if (!options) {
-        options = {};
-    }
+function Validator(formSelector) {
+    var _this = this;
+    var formRules = {};
 
     function getParent(element, selector) {
         while (element.parentElement) {
@@ -12,7 +10,6 @@ function Validator(formSelector, options) {
             element = element.parentElement;
         }
     }
-    var formRules = {};
     var validatorRules = {
         required: function (value) {
             return value ? undefined : "Vui lòng nhập trường này!";
@@ -68,10 +65,11 @@ function Validator(formSelector, options) {
             var rules = formRules[event.target.name];
             var errorMessage;
 
-            rules.find(function (rule) {
+            for (var rule of rules) {
                 errorMessage = rule(event.target.value);
-                return errorMessage;
-            });
+                if (errorMessage) break;
+            }
+
             // If there is an error display an error message in the UI
             if (errorMessage) {
                 var formGroup = getParent(event.target, '.form-group');
@@ -98,6 +96,8 @@ function Validator(formSelector, options) {
             }
         }
     }
+    // console.log("this", this);
+
     // Xử lý hành vi submit của form
     formElement.onsubmit = function (event) {
         event.preventDefault();
@@ -111,13 +111,35 @@ function Validator(formSelector, options) {
 
         // khi ko có lỗi thì submit form
         if (isValid) {
-            if (typeof options.onSubmit === 'function') {
-                options.onSubmit();
+            if (typeof _this.onSubmit === 'function') {
+                var enableInputs = formElement.querySelectorAll("[name]");
+                var formValues = Array.from(enableInputs).reduce(function (values, input) {
+                    switch (input.type) {
+                        case 'radio':
+                            values[input.name] = formElement.querySelector('input[name="' + input.name + '"]:checked').value;
+                            break;
+                        case 'checkbox':
+                            if (!input.matches(':checked')) {
+                                values[input.name] = '';
+                                return values;
+                            }
+                            if (!Array.isArray(values[input.name])) {
+                                values[input.name] = [];
+                            }
+                            values[input.name].push(input.value);
+                            break;
+                        case 'file':
+                            values[input.name] = input.files;
+                            break;
+                        default:
+                            values[input.name] = input.value;
+                    }
+                    return values;
+                }, {});
+                _this.onSubmit(formValues);
             } else {
                 formElement.submit();
             }
-            
         }
     }
-
 }
