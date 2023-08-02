@@ -39,4 +39,3 @@ var result = courses.some(function(course, index, array) {
 
 console.log(result);
 
-

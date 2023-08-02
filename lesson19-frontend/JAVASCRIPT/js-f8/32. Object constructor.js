@@ -21,7 +21,6 @@ function User(firstName, lastName, avatar) {
 
 var author = new User('Ánh', 'Nguyên', 'Avatar');
 var user = new User('Sơn', 'Đặng', 'Avatar');
-
 // tuy hai đối tượng cùng đc khởi tạo từ cùng một bản thiết kế
 // nhưng thêm thuộc tính thì nó không bị ảnh hưởng đến nhau
 author.title = 'Chia sẻ dạo tại F8';
