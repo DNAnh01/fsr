@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ReactJS -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <!-- React-DOM -->
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- Babel -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <title>React JS F8</title>
+</head>
+
+<body>
+    <!-- 
+            1. document.createElement()
+            2. document.body.appendChild()
+            3. console.dir()
+            4. innerText, id, className, style
+         -->
+
+    <!-- 
+            Thêm React vào Website? Github, NPMJS, UNPKG là gì?
+            1. Github, NPMJS, UNPKG
+            2. Add React to website 
+            3. Official React
+        -->
+
+    <!-- 
+            1. React.createElement() -> React element
+            2. So sánh với document.createElement() -> DOM element
+            3. Thay đổi id, className, style, ...
+            4. Thêm: text, HTML, ...
+
+         -->
+
+    <!-- 
+            1. Tại sao phải sử dụng React-DOM ?
+                -> là thư viện cầu nối giữa React và DOM
+            2. Tại sao lại tách React DOM ra ?
+             
+            3. Render UI
+         -->
+
+    <!-- 
+            *Hooks
+
+            1. React element types: string, function/class
+                - Wrapper
+                    -Header -> Header component
+                    -Content -> Content component
+                    -Footer -> Footer component
+
+        -->
+
+    <div id="root"></div>
+    <script>
+        // const h1 = document.querySelector('#heading')
+        // // console.dir(h1)
+        // console.log(React.version)
+        // const h1React = React.createElement('h1', null, 'ReactJs')
+        // console.log(h1React)
+
+        // DOM element
+        // const ulDOM = document.createElement('ul');
+        // const liFirstDOM = document.createElement('li');
+        // const liSecondDOM = document.createElement('li');
+
+        // liFirstDOM.innerText = 'Javascript';
+        // liSecondDOM.innerText = 'ReactJs';
+        // liFirstDOM.style.color = 'red';
+        // liFirstDOM.style.fontWeight = 700;
+
+        // ulDOM.appendChild(liFirstDOM);
+        // ulDOM.appendChild(liSecondDOM);
+
+        // document.body.appendChild(ulDOM);
+
+        // React element
+        // const createElementWitReact = React.createElement('h1', {
+        //     className: 'header',
+        //     style: 'color: green; font-weight: bold;'
+        // }, React.createElement('a', null, 'React'))
+        // console.log(createElementWitReact)
+
+
+        // React
+        // 3. Render UI
+        // const postItem = React.createElement(
+        //     'div',
+        //     {
+        //         className: 'post-item',
+        //         style: {
+        //                 color: 'green',
+        //                 fontWeight: 'bold'
+        //             }
+        //     },
+        //     React.createElement(
+        //         'h2',
+        //         {
+        //             title: 'Hoc React tai F8'
+        //         },
+        //         'Hoc ReactJS'
+        //     ),
+        //     React.createElement(
+        //         'p',
+        //         {},
+        //         'Hoc ReactJS tu co ban den nang cao'
+        //     ),
+        // )
+        // // Get root element
+        // const container = document.getElementById('root')
+        // // React@17
+        // // React-DOM render UI
+        // ReactDOM.render(postItem, container)
+
+        // React@18
+        // const root = ReactDOM.createRoot(container)
+        // root.render(postItem)
+
+        // khi một children có từ 2 phần tử trở lên thì có type là arr
+
+    </script>
+
+    <!-- Babel -->
+    <script type="text/babel">
+        var courses = [
+            { name: 'Javascript, PHP' },
+            { name: 'HTML, CSS' },
+            { name: 'ReactJS' }
+        ]
+        const jsx =
+            <React.Fragment>
+                <ul>
+                    {courses.map((course, index) => <li key={index}>{course.name}</li>)}
+                </ul>
+            </React.Fragment>
+
+
+        ReactDOM.render(jsx, document.querySelector('#root'));
+    </script>
+</body>
+
+</html>

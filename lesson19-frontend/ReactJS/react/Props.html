@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- ReactJS @17-->
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <!-- React-DOM @17-->
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        <!-- Babel -->
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <title>Props</title>
+        <style>
+            /* import font family poppins */
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400&display=swap');
+
+            * {
+                padding: 0;
+                margin: 0;
+                box-sizing: border-box;
+                color: white;
+                font-family: "Poppins";
+                font-weight: 700;
+            }
+
+            body {
+                height: 100vh;
+                width: 100vw;
+                background: linear-gradient(to right, #4daf54, #3d8880);
+
+            }
+
+            #wrapper {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .post-item {
+                width: 250px;
+                height: 300px;
+                background-color: #272d40;
+                border-radius: 10px;
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .post-item img {
+                width: 84%;
+                height: 70%;
+                object-fit: cover;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- 
+                Props:
+                - React elements
+                    - Sử dụng props giống như với attribute của thẻ HTML
+                    - 2 props class, for => className, htmlFor
+                    - Phải tuân theo quy ước có sẵn
+                - React component
+                    - Sử dụng props giống như đối số cho Component (Function)
+                    - Tự do đặt tên props
+                        - Đặt theo camelCase
+                        - *Có thể bao gồm dấu gạch ngang (không khuyến khích)
+                - Chú ý:
+                    - Prop "key" là prop đặc biệt (khi đưa React Element nằm trong Array)
+                    - Props cơ bản là đối số của Component
+                        => Props có thể là bất cứ kiểu dữ liệu gì
+                    - Sử dụng destructuring
+
+            -->
+        <div id="root"></div>
+        <script type="text/babel">
+            var infos = [
+                {
+                    image: "https://cdn.iconscout.com/icon/free/png-256/free-avatar-370-456322.png?f=webp",
+                    title: "Nguyen Anh",
+                    description: "Fullstack development"
+                },
+                {
+                    image: "data:image/png;base64,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",
+                    title: "Joker",
+                    description: "Mobile development"
+                },
+                {
+                    image: "data:image/jpeg;base64,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",
+                    title: "Ngoc Trinh",
+                    description: "Embed development"
+                }
+            ]
+
+            // PostItem.js
+            function PostItem({
+                image,
+                title,
+                description = "Mobile App",
+                callback = () => {}
+            }) {
+
+                return (
+                    <div className="post-item">
+                        <img src={image} alt="joker" />
+                        <h2 className="post-title">{title}</h2>
+                        <p className="post-desc">{description}</p>
+                    </div>
+                )
+            }
+
+            // App.js
+            function App() {
+                return (
+                    <div id="wrapper">
+                        {infos.map((info, index) => (
+                            <PostItem 
+                                key={index}
+                                image={info.image}
+                                title={info.title}
+                                description={info.description}
+                            />
+                        ))}
+                    </div>
+                )
+            }
+
+            // index.js
+            ReactDOM.render(<App />, document.querySelector('#root'))
+        </script>
+    </body>
+
+</html>

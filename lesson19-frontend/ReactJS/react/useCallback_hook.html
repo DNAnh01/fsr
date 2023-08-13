@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ReactJS @17-->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <!-- React-DOM @17-->
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- Babel -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>useCallback hook</title>
+</head>
+
+<!-- 
+
+    1. memo() -> Higher Order Component (HOC)
+        giúp ghi nhớ lại các props của một component để
+        quyết định là có render lại component đó hay ko -> performance optimization 
+
+    2. useCallback() : giup tranh tao ra cac ham moi ko can thiet
+        - Reference type
+        - React memo
+ -->
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        // memo se kiem ra cac props cua Content neu co it nhat 1 prop 
+        // thay doi thi no se re-render lai component Content
+        const Content = React.memo(({onIncrease}) => {
+
+            console.log('re-render');
+            return (
+                <React.Fragment>
+                    <h2>Welcome to ReactJS</h2>
+                    <button onClick={onIncrease}>increase</button>
+                </React.Fragment>
+            )
+        })
+
+        function App() {
+
+            const [count, setCount] = React.useState(0)
+            /*
+            lan dau tien App dc mounted thi no chay qua ham handelIncrease
+            thi callback trong useCallBack dc tao va dc luu lai tham chieu
+            sau do no return lai tham chieu va luu lai cho handelIncrease
+
+            neu deps trong thi se tra lai tham chieu trc do
+
+
+            -> neu su dung memo HOC thi cac props la func deu nen su dung useCallback
+            */
+            const handelIncrease = React.useCallback(() => {
+                setCount(prevCount => prevCount + 1)
+            }, [])
+
+            return (
+                <div>
+                    <h1>{count}</h1>
+                    <Content 
+                        onIncrease={handelIncrease}
+                    />
+                </div>
+            )
+        }
+        ReactDOM.render(<App />, document.querySelector('#root'))
+    </script>
+</body>
+
+</html>

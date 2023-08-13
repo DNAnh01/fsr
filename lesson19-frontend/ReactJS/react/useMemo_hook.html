@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ReactJS @17-->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <!-- React-DOM @17-->
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- Babel -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>useMemo hook</title>
+</head>
+<!-- 
+    useMemo hook: tranh thuc hien lai mot logic khong can thiet
+ -->
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+
+        function App() {
+            const [name, setName] = React.useState('')
+            const [price, setPrice] = React.useState('')
+            const [products, setProducts] = React.useState([])
+            const nameRef = React.useRef()
+
+            const handelSubmit = () => {
+                setProducts([...products, {
+                    name,
+                    price: parseInt(price)
+                }])
+                setName('')
+                setPrice('')
+
+                nameRef.current.focus()
+            }
+            
+            const total = React.useMemo(() => {
+                const result = products.reduce((result, prod) => {
+                console.log('Re calculate');
+                return result + prod.price
+            }, 0)
+                return result
+            }, [products])
+            
+        
+            return (
+                <div style={{ padding: '10px 20px' }}>
+                    <input
+                        ref={nameRef}
+                        value={name}
+                        placeholder="Enter name..."
+                        onChange={e => setName(e.target.value)}
+                    />
+                    <br />
+                    <input
+                        value={price}
+                        placeholder="Enter price..."
+                        onChange={e => setPrice(e.target.value)}
+                    />
+                    <br />
+                    <button onClick={handelSubmit}>Add</button>
+                    <br />
+                    Total: {total}
+                    <br />
+                    <ul>
+                        {products.map((product, index) => (
+                            <li key={index}>{product.name} - {product.price}</li>
+                        ))}
+                    </ul>
+                </div>
+            )
+        }
+        ReactDOM.render(<App />, document.querySelector('#root'))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- ReactJS @17-->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <!-- React-DOM @17-->
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <!-- Babel -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>React.memo() HOC</title>
+</head>
+<!-- 
+
+    1. memo() -> Higher Order Component (HOC)
+        giúp ghi nhớ lại các props của một component để
+        quyết định là có render lại component đó hay ko -> performance optimization 
+
+    2. useCallback()
+
+
+    Hooks
+    HOC
+    Render props
+ -->
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        
+
+        function App() {
+            const [count, setCount] = React.useState(0)
+
+            const increase = () => {
+                setCount(prev => prev + 1)
+            }
+            return (
+                <div style={{ padding: '10px 32px'}}>
+                    <h1>{count}</h1>
+                    <button onClick={increase}>Click me!</button>
+                    </div>
+            )
+        }
+        ReactDOM.render(<App />, document.querySelector('#root'))
+    </script>
+</body>
+
+</html> 
