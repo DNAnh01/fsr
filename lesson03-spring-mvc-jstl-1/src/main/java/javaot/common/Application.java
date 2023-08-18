@@ -4,6 +4,11 @@ public class Application {
 	private Application() {}
 	
 	
+	public static final String STUDENT_ADD_TITLE = "ADD";
+	public static final String STUDENT_EDIT_TITLE = "TITLE";
+	
+	
+	
 	public static final String HOME_PAGE = "homepage";
 	
 	public static final String CUSTOMER_FORM_PAGE = "customer/customer-form";

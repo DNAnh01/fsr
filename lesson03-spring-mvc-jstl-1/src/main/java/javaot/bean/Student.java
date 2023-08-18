@@ -2,26 +2,44 @@ package javaot.bean;
 
 import java.util.Arrays;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import validation.StartsWith;
+
 /**
  * 
  */
 public class Student {
+	
 	private String id;
+	
+	@NotNull(message = "Input cannot be empty!")
+	@Size(min = 5, message = "Full name require at least 5 letters!")
 	private String fullName;
+	
+	@NotNull(message = "Input cannot be empty!")
 	private Integer age;
+	
 	private String country;
+	
 	private String[] operatingSystems;
 	
+	
+//	@NotNull(message = "Input cannot be empty!")
+	@StartsWith(prefix = "BKIT", message = "CourseName must start with BKIT")
+	private String course;
 	
 	public Student() {
 	}
 
-	public Student(String id, String fullName, Integer age, String country, String[] operatingSystems) {
-		this.id = id;
+	public Student(String id, String fullName, Integer age, String country, String[] operatingSystems, String course) {
+		this.id = id;	
 		this.fullName = fullName;
 		this.age = age;
 		this.country = country;
 		this.operatingSystems = operatingSystems;
+		this.course = course;
 	}
 
 	public void transfer(Student student) {
@@ -30,6 +48,7 @@ public class Student {
 		this.age = student.age;
 		this.country = student.country;
 		this.operatingSystems = student.operatingSystems;
+		this.course = student.course;
 	}
 
 	public String getId() {
@@ -78,9 +97,19 @@ public class Student {
 		return Arrays.toString(operatingSystems);
 	}
 
+	
+	
+	public String getCourse() {
+		return course;
+	}
+
+	public void setCourse(String course) {
+		this.course = course;
+	}
+
 	@Override
 	public String toString() {
 		return "Student [id=" + id + ", fullName=" + fullName + ", age=" + age + ", country=" + country
-				+ ", operatingSystems=" + Arrays.toString(operatingSystems) + "]";
+				+ ", operatingSystems=" + Arrays.toString(operatingSystems) + ", course=" + course + "]";
 	}
-}	
+}

@@ -22,9 +22,9 @@ public class MockData {
 //		);
 
 		return new ArrayList<Student>(Arrays.asList(
-				new Student("102", "Adam", 22, "VietNam", new String[] {"Unix", "Mac OS"}), 
-				new Student("103", "Bichs", 12, "France", new String[] {"Unix", "Windows"}),
-				new Student("104", "Duyen", 24, "Thailand", new String[] {"Linux", "Mac OS"})));
+				new Student("102", "Adam", 22, "VietNam", new String[] {"Unix", "Mac OS"}, "BKIT-11"), 
+				new Student("103", "Bichs", 12, "France", new String[] {"Unix", "Windows"}, "BKIT-12"),
+				new Student("104", "Duyen", 24, "Thailand", new String[] {"Linux", "Mac OS"}, "BKIT-13")));
 	}
 
 	public static String[] getCountries() {

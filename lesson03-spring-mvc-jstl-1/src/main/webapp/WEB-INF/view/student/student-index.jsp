@@ -57,6 +57,7 @@ tr:nth-child(even) {
 				<th>Age</th>
 				<th>Country</th>
 				<th>Operating system</th>
+				<th>Course</th>
 				<th>---</th>
 			</tr>
 		</thead>
@@ -68,6 +69,7 @@ tr:nth-child(even) {
 					<td>${student.age}</td>
 					<td>${student.country}</td>
 					<td>${student.osAsString}</td>
+					<td>${student.course}</td>
 					<td><a href="${contextPath}/student/edit?id=${student.id}">EDIT</a></td>
 				</tr>
 			</c:forEach>
