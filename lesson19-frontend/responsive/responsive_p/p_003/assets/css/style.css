@@ -1,0 +1,54 @@
+/* reset css */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+}
+
+.container {
+    position: relative;
+}
+
+.item {
+    margin-top: 16px;
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+    min-height: 380px;
+    line-height: 380px;
+    background-color: rgba(14, 73, 14, 0.8);
+    user-select: none;
+    border-radius: 10px;
+}
+
+.item:hover {
+    background-color: rgb(14, 73, 14);
+}
+.content {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.header-layout {
+    color: #fff;
+    text-align: center;
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 16px);
+    margin-top: 16px;
+    font-size: 40px;
+    color: #fff;
+    background-color: rgba(14, 73, 14, 0.8);
+    border-radius: 10px;
+
+}
+
