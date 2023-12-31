@@ -28,21 +28,15 @@ document.getElementById('next').onclick = function() {
 
 document.getElementById('prev').onclick = function() {
     prevSlide();
-    stopAutoSlide(); // Dừng tự động chuyển slide khi click vào nút prev
+    stopAutoSlide(); 
 };
 
-// Bắt đầu tự động chuyển slide khi trang web được tải
-startAutoSlide();
-
-// Bắt đầu tự động chuyển slide lại sau khi 2 giây không có hành động
-document.addEventListener('DOMContentLoaded', function() {
-    document.addEventListener('mousemove', function() {
-        stopAutoSlide(); // Dừng tự động chuyển slide khi có hành động chuột
-        startAutoSlide(); // Bắt đầu lại sau khi có hành động chuột
-    });
-
-    document.addEventListener('keydown', function() {
-        stopAutoSlide(); // Dừng tự động chuyển slide khi có hành động phím
-        startAutoSlide(); // Bắt đầu lại sau khi có hành động phím
-    });
+document.querySelector('.container').addEventListener('mouseenter', function() {
+    stopAutoSlide();
 });
+
+document.querySelector('.container').addEventListener('mouseleave', function() {
+    startAutoSlide();
+});
+
+startAutoSlide();
