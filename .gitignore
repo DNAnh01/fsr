@@ -1,4 +1,7 @@
 # Ignore .metadata folder
+
+/node_modules
+
 .metadata
 target
 */target
