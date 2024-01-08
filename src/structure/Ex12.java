@@ -15,6 +15,7 @@ public class Ex12 {
         items[2] = new Item(103, 403, "Item 403", 600);
         Item[] result = findItems(items);
         print(result);
+
     }
 
     // Viết 1 hàm để tìm "những mặt hàng" có giá > 500
