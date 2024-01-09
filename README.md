@@ -1,8 +1,8 @@
-##**OOP - Object Oriented Programming**
+## OOP - Object Oriented Programming
 
-###Trong lập trình hướng đối tượng (OOP) của Java, có bốn tính chất chính:
+### Trong lập trình hướng đối tượng (OOP) của Java, có bốn tính chất chính:
 
-###1. Kế thừa (Inheritance):
+### 1. Kế thừa (Inheritance):
 
 -   Mô tả: Kế thừa cho phép một lớp con sử dụng tất cả hoặc một phần thuộc tính và phương thức của một lớp cha. Lớp con có thể mở rộng (thêm mới) hoặc ghi đè (thay đổi) các phương thức của lớp cha.
 
@@ -24,7 +24,7 @@ class Dog extends Animal {
 }
 ```
 
-###2. Đóng gói (Encapsulation):
+### 2. Đóng gói (Encapsulation):
 
 -   Mô tả: Đóng gói là quá trình ẩn giấu thông tin nội tại của một đối tượng và chỉ cho phép truy cập thông qua các phương thức công cộng. Các biến instance thường được đặt là private và truy cập thông qua getter và setter.
 
@@ -46,7 +46,7 @@ class Person {
 }
 ```
 
-###3. Đa hình (Polymorphism):
+### 3. Đa hình (Polymorphism):
 
 -   Mô tả: Đa hình cho phép một đối tượng có thể thể hiện nhiều hình dạng thông qua một tên gọi chung. Có đa hình compile-time (overloading) và đa hình runtime (overriding).
 
@@ -72,7 +72,7 @@ class Square implements Shape {
 }
 ```
 
-###4. Tính trừu tượng (Abstraction):
+### 4. Tính trừu tượng (Abstraction):
 
 -   Mô tả: Tính trừu tượng là quá trình tạo ra một lớp trừu tượng (abstract class) hoặc giao diện (interface) để giảm bớt chi tiết không quan trọng và tập trung vào những đặc điểm quan trọng của đối tượng.
 
