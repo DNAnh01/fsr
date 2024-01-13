@@ -2,7 +2,7 @@ package exercises;
 
 public class Ex0141LinkedListCircle {
 
-    public static class ListNode {
+    public class ListNode {
         int val;
         ListNode next;
 
@@ -12,7 +12,7 @@ public class Ex0141LinkedListCircle {
         }
     }
 
-    private static boolean hasCircle(ListNode head) {
+    public boolean hasCircle(ListNode head) {
         if (head == null || head.next == null) {
             return false;
         }
@@ -36,10 +36,6 @@ public class Ex0141LinkedListCircle {
             slow = slow.next;
         }
         return false;
-    }
-
-    public static void main(String[] args) {
-
     }
 
 }
