@@ -1,5 +1,6 @@
 package exercises;
 
+// you can build using array or linked list
 public class Ex0622DesignCircularQueue {
 
     public static class MyCircularQueue {
