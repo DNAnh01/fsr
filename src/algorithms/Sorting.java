@@ -89,6 +89,12 @@ public class Sorting {
         }
     }
 
+    /**
+     * 4. Merge sort: sắp xếp trộn
+     * 
+     * 
+     */
+
     public static void main(String[] args) {
         int[] a = { 5, 3, 2, 7, 8, 1, 2 };
         // System.out.println("bubble sort");
