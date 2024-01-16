@@ -58,7 +58,6 @@ public class Ex0020ValidParentheses {
             char currentChar = s.charAt(i);
             if (currentChar == '(' || currentChar == '[' || currentChar == '{') {
                 stack.push(currentChar);
-                System.out.println("currentChar: " + currentChar);
 
             } else {
                 if (stack.isEmpty()) {
@@ -69,6 +68,8 @@ public class Ex0020ValidParentheses {
                         || (prevChar == '[' && currentChar == ']')
                         || (prevChar == '{' && currentChar == '}')) {
                     // oke
+                    // System.out.println("prevChar: " + prevChar);
+                    // System.out.println("currentChar: " + currentChar);
                 } else {
                     return false;
                 }
@@ -78,7 +79,7 @@ public class Ex0020ValidParentheses {
     }
 
     public static void main(String[] args) {
-        String s = "{()}{}"; // {({
+        String s = "{()}{}";
         System.out.println(isValid(s));
     }
 }
