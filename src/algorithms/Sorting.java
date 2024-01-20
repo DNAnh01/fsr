@@ -1,5 +1,7 @@
 package algorithms;
 
+import java.util.Arrays;
+
 public class Sorting {
 
     private static void printArray(int no, int[] a) {
@@ -91,18 +93,137 @@ public class Sorting {
 
     /**
      * 4. Merge sort: sắp xếp trộn
-     * 
+     * nguyên lý:
+     * + chia ra
+     * > chia ra đến khi mỗi mảng con chỉ gồm một phần tử, rồi bắt đầu
+     * gộp lại
+     * + trộn vào
      * 
      */
 
+    private static int[] mergeSort(int[] array) {
+        return merge(array, 0, array.length - 1);
+    }
+
+    private static int[] merge(int[] array, int left, int right) {
+        if (left == right) {
+            int[] singleElementArray = { array[left] };
+            return singleElementArray;
+        }
+
+        int middle = (left + right) / 2;
+
+        int[] leftSubarray = merge(array, left, middle);
+        int[] rightSubarray = merge(array, middle + 1, right);
+
+        int mergedSize = leftSubarray.length + rightSubarray.length;
+
+        int[] mergedResult = new int[mergedSize];
+
+        int mergedIndex = 0, leftIndex = 0, rightIndex = 0;
+
+        while (mergedIndex < mergedSize) {
+            if (leftIndex < leftSubarray.length && rightIndex < rightSubarray.length) {
+                if (leftSubarray[leftIndex] < rightSubarray[rightIndex]) {
+                    mergedResult[mergedIndex] = leftSubarray[leftIndex];
+                    mergedIndex++;
+                    leftIndex++;
+                } else {
+                    mergedResult[mergedIndex] = rightSubarray[rightIndex];
+                    mergedIndex++;
+                    rightIndex++;
+                }
+            } else {
+                /**
+                 * Nếu một trong hai mảng con đã được xử lý hết, nhưng mảng kia còn phần tử chưa
+                 * được xử lý, chương trình sẽ chọn phần tử từ mảng còn lại và đặt vào mảng kết
+                 * quả.
+                 */
+                if (leftIndex < leftSubarray.length) {
+                    mergedResult[mergedIndex] = leftSubarray[leftIndex];
+                    mergedIndex++;
+                    leftIndex++;
+                } else if (rightIndex < rightSubarray.length) {
+                    mergedResult[mergedIndex] = rightSubarray[rightIndex];
+                    mergedIndex++;
+                    rightIndex++;
+                }
+            }
+        }
+
+        return mergedResult;
+    }
+
+    /**
+     * 5. Quick Sort: Sắp xếp nhanh
+     * nguyên lý:
+     * 
+     * + chọn một phần tử bất kỳ trong mảng để làm khóa, thông thường sẽ
+     * chọn phần tử ở giữa mảng
+     * 
+     * + phân bố lại mảng theo khóa (1 phần nhỏ hơn khóa và một phần lớn
+     * hơn khóa)
+     * 
+     * + chia mảng ra theo hai phân bố
+     * 
+     * + lặp lại các bước trên cho từng mảng con
+     * 
+     */
+
+    private static void quickSort(int[] array, int left, int right) {
+        if (left >= right) {
+            return;
+        }
+        // B1: chọn khóa
+        int key = array[(left + right) / 2];
+        // B2: phân bố lại mảng theo khóa
+        int k = partition(array, left, right, key);
+        // B3: chia đôi mảng -> lặp lại toàn bộ chu trình
+        System.out.println("left=" + left + " right=" + right + " key=" + key + " (pivot)k=" + k);
+        System.out.println(Arrays.toString(Arrays.copyOfRange(array, left, right + 1)));
+        System.out.println("----------------------");
+        quickSort(array, left, k - 1);
+        quickSort(array, k, right);
+    }
+
+    // return pivot value
+    private static int partition(int[] array, int left, int right, int key) {
+        int iL = left;
+        int iR = right;
+
+        while (iL <= iR) {
+            // với iL đi tìm phần tử >= key để đổi chỗ
+            while (array[iL] < key) {
+                iL++;
+            }
+            // với iR đi tìm phần tử <= key để đổi chỗ
+            while (array[iR] > key) {
+                iR--;
+            }
+
+            // swap two elements that are not in the correct position
+            if (iL <= iR) {
+                int temp = array[iL];
+                array[iL] = array[iR];
+                array[iR] = temp;
+                iL++;
+                iR--;
+            }
+        }
+        return iL;
+    }
+
     public static void main(String[] args) {
-        int[] a = { 5, 3, 2, 7, 8, 1, 2 };
+        int[] a = { 5, 3, 2, 7, 8, 1, 2, 9 };
         // System.out.println("bubble sort");
         // bubbleSort(a);
         // System.out.println("insertion sort");
         // insertionSort(a);
-        System.out.println("selection sort");
-        selectionSort(a);
+        // System.out.println("selection sort");
+        // selectionSort(a);
+
+        quickSort(a, 0, a.length - 1);
+        System.out.println(Arrays.toString(a));
 
         /**
          * insertion sort khác với selection sort
