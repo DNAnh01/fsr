@@ -54,9 +54,9 @@ public class DesignAHashMap {
         private ArrayList<Data>[] myBuckets;
 
         public MyHashMap() {
-            this.myBuckets = new ArrayList[SIZE];
             for (int i = 0; i < myBuckets.length; i++) {
                 myBuckets[i] = new ArrayList<Data>();
+                this.myBuckets = new ArrayList[SIZE];
             }
         }
 
