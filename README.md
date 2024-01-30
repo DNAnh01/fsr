@@ -1,1 +1,0 @@
-<img src="./edrawmind.png" height="" width=""/>
