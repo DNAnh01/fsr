@@ -16,6 +16,14 @@ public class Ex04MethodReference {
         // (Class c) -> c.getProperty(); --> Class::getProperty
 
         transfer(inventory, Apple::getColor).forEach(System.out::println);
+        transfer(inventory, Apple::getCountry).forEach(System.out::println);
+
+        Set<Integer> ids = transfer(inventory, Ex04MethodReference::getAppleId);
+        ids.forEach(s -> System.out.println(s));
+    }
+
+    private static Integer getAppleId(Apple apple) {
+        return apple.getId();
     }
 
     private static <E, R> Set<R> transfer(List<E> elements, Function<E, R> function) {
