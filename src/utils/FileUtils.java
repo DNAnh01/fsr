@@ -46,7 +46,7 @@ public class FileUtils {
         return file;
     }
 
-    public static File createDirectory(String pathName) {
+    public static File createNewDirectory(String pathName) {
         /**
          * - creates a new directory at the pathName location.
          * - return a File object representing created directory.
@@ -63,9 +63,9 @@ public class FileUtils {
 
     public static Path createNewDirectoryAsPath(String pathName) {
         /**
-         * - similar createDirectory, but returns a Path object instead of a file.
+         * - similar createNewDirectory, but returns a Path object instead of a file.
          */
-        return createDirectory(pathName).toPath();
+        return createNewDirectory(pathName).toPath();
     }
 
     public static Path rename(Path fileNameAsPath) {
@@ -100,7 +100,6 @@ public class FileUtils {
          * - first writes the title and a separator line.
          * - then writes each data line from the dataRows list (each DataRow element
          * must have a toLine() method to convert it to a string).
-         * 
          */
         FileWriter fw = null;
         BufferedWriter bw = null;
@@ -156,7 +155,6 @@ public class FileUtils {
         try {
             fos = new FileOutputStream(file);
             oos = new ObjectOutputStream(fos);
-
             oos.writeObject(object);
         } catch (Exception e) {
             e.printStackTrace();
