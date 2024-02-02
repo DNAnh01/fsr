@@ -170,7 +170,7 @@ public class FileUtils {
          * - reads a Java object from a file that was saved using serialization
          * (ObjectInputStream).
          */
-        FileInputStream fis = null;
+        FileInputStream fis = null; // to read raw bytes from the file.
         ObjectInputStream ois = null;
         Object object = null;
         try {
