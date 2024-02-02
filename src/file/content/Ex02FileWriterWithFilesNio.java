@@ -12,19 +12,22 @@ import utils.FileUtils;
 
 public class Ex02FileWriterWithFilesNio {
     public static void main(String[] args) {
+
         File file = FileUtils.createNewFile("src/data/" + File.separator + "content.txt");
+
         List<Customer> customers = DataModel.getCustomers();
+
         List<String> lines = customers.stream()
                 .map(customer -> customer.toLine())
                 .collect(Collectors.toList());
+
         lines.add(0, "information customer ex02");
         lines.add(1, "--------------------------");
+
         try {
             Files.write(file.toPath(), lines);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("Finished ...");
     }
-
 }

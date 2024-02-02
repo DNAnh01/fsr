@@ -1,6 +1,0 @@
-information customer
-======================
-Nguyen Anh, 0852 501 333, Hoa Khanh
-Van Nam, 0932 487 234, Son Tra
-Hoai Phuong, 0342 643 134, Cam le
-Truong Giang, 0234 524 234, Cao Bang
