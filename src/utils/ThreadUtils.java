@@ -18,6 +18,15 @@ public class ThreadUtils {
         System.out.println("thread " + Thread.currentThread().getName() + " is running ...");
     }
 
+    public static void startThread(long time) {
+        System.out.println("thread " + Thread.currentThread().getName() + " is running ... " + time);
+    }
+
+    public static void endThread(long start) {
+        System.out.println(
+                "thread " + Thread.currentThread().getName() + " took " + (System.currentTimeMillis() - start) + " ms");
+    }
+
     // virtual task with a certain time
     public static void doTask(long time, TimeUnit timeUnit) {
         // time: thực hiện task trong bao lâu
