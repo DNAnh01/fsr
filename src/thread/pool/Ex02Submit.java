@@ -31,7 +31,7 @@ public class Ex02Submit {
 
         for (Task task : list) {
             Future<Integer> future = executorService.submit(task);
-            // same Optional<T>
+            // the same Optional<T>
             try {
                 System.out.println("current return value: " + future.get());
             } catch (InterruptedException | ExecutionException e) {

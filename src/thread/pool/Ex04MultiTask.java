@@ -1,5 +1,7 @@
 package thread.pool;
 
+import static utils.ThreadUtils.doTask;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -18,35 +20,40 @@ import utils.ThreadUtils;
  * + blocking queue: number of tasks
  */
 public class Ex04MultiTask {
-    private static Random random = new Random();
+    private static Random rd = new Random();
     private static int capacity = 20;
 
     public static void main(String[] args) throws InterruptedException, ExecutionException {
+        System.out.println("thread start");
 
+        // blocking queue
         List<FutureTask<Integer>> futureTasks = new ArrayList<>(capacity);
-
         for (int i = 0; i < capacity; i++) {
             futureTasks.add(new FutureTask<>(new Task()));
         }
 
-        // create thread pools
+        // thread pool - idea processors
         ExecutorService service = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
-
         for (FutureTask<Integer> futureTask : futureTasks) {
             service.submit(futureTask);
-            System.out.println("futureTask.get(): " + futureTask.get());
+            System.out.println("random: " + futureTask.get());
         }
-        service.shutdown();
 
+        // shutdown thread pools
+        service.shutdown();
+        System.out.println("thread end");
     }
 
     private static class Task implements Callable<Integer> {
 
         @Override
         public Integer call() throws Exception {
-            int rand = 5 + random.nextInt(6);
+            // task random number from 10 to 20
+            int rand = 10 + rd.nextInt(11);
+
             ThreadUtils.startThread(rand);
-            ThreadUtils.doTask(1, TimeUnit.SECONDS);
+            doTask(2, TimeUnit.SECONDS);
+
             return rand;
         }
     }

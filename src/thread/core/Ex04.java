@@ -49,7 +49,19 @@ public class Ex04 {
         public void run() {
             startThread();
             doTask(time, timeUnit);
+            demoSync();
             System.out.println(getThreadName() + " took " + (System.currentTimeMillis() - start) + " ms");
         }
+    }
+
+    private synchronized static void demoSync() {
+        // tại một thời điểm có nhiều thread cùng truy cập hàm run
+
+        // bây giờ mình muốn tại một thời điểm chỉ có duy nhất một thread
+        // truy cập vào hàm run thì thêm từ khóa synchronized -> đảm bảo tại
+        // một thời điểm chỉ có một thread truy cập vào đây thôi
+        System.out.println(getThreadName() + " accessed synchronized method");
+
+        System.out.println("end synchronized method");
     }
 }

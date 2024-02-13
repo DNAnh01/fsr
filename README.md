@@ -51,3 +51,44 @@ Dưới đây là một số lợi ích của việc sử dụng ThreadPool:
 - Đơn giản hóa việc quản lý luồng:
 
 hãy tưởng tượng bạn là senior backend java hãy dạy cho tôi về thread pool trong java hãy giải thích chi tiết và cho code cụ thể , có thể cho thêm code thực thế trong dự án
+
+##### 3.1 excute
+
+```java
+    int processors = Runtime.getRuntime().availableProcessors();
+    ExecutorService executorService = Executors.newFixedThreadPool(processors);
+    for (Task task : list) {
+        executorService.execute(task);
+    }
+```
+
+##### 3.1 submit
+
+```java
+   ExecutorService executorService = Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+    for (Task task : list) {
+        Future<Integer> future = executorService.submit(task);
+        // the same Optional<T>
+        try {
+            System.out.println("current return value: " + future.get());
+        } catch (InterruptedException | ExecutionException e) {
+            e.printStackTrace();
+        }
+    }
+    // shutdown thread pools
+    executorService.shutdown();
+```
+
+##### 3.2 FutureTask
+
+#### 4. Synchronized
+
+##### 4.1 Synchronized method
+
+##### 4.2 Synchronized data
+
+##### Deadlock
+
+![deadlock](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjvXFDsElBWlJoj3lE3zuf618t6yCQGQgFSCNL_69LbBJ7j6DWGzeiiWHqoM-lw4eIyYx8UCOuCeuJDRqoLZp2F8QY4KMzJsWvL4igWZFg1GVHw49r_yzMG03InC25mWdcF-_RQovvnmkg-/s1600/TDeadlock.jpg)
+
+- tại một thời điểm chỉ có một thread truy cập vào nó
