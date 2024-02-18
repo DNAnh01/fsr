@@ -1,7 +1,9 @@
 # Ignore .metadata folder
 
-# orther
+# idea
 /.vscode
+/.idea
+
 
 # gitignore file in java project
 
@@ -38,6 +40,15 @@ target
 *.zip
 *.tar.gz
 *.rar
+
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
