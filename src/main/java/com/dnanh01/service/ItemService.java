@@ -6,4 +6,6 @@ import com.dnanh01.persistence.Item;
 
 public interface ItemService {
     List<Item> getAll();
+
+    List<Item> getItems(String itemGroupName);
 }

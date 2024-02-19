@@ -1,6 +1,7 @@
 package com.dnanh01.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -15,7 +16,7 @@ public class JdbcItemDao implements ItemDao {
 
     private Connection connection;
     private Statement statement;
-    // private PreparedStatement preparedStatement;
+    private PreparedStatement preparedStatement;
     private ResultSet resultSet;
 
     /**
@@ -77,7 +78,34 @@ public class JdbcItemDao implements ItemDao {
 
     @Override
     public List<Item> getItems(String itemGroupName) {
-
-        return null;
+        // get item by item-group name
+        List<Item> result = new ArrayList<>();
+        String sql = "" +
+                "SELECT * " +
+                "FROM mathang mh " +
+                "JOIN loaihang lh " +
+                "ON mh.MaLH = lh.MaLH " +
+                "WHERE lh.TenLH LIKE ?;"; // --> LIKE '?'
+        try {
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, "%" + itemGroupName + "%");
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                ItemGroup itemGroup = new ItemGroup(
+                        resultSet.getInt("MaLH"),
+                        resultSet.getString("TenLH"));
+                Item item = new Item(
+                        resultSet.getInt("MaMH"),
+                        resultSet.getString("TenMH"),
+                        resultSet.getString("MauSac"),
+                        itemGroup);
+                result.add(item);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            SqlUtils.close(resultSet, preparedStatement);
+        }
+        return result;
     }
 }
