@@ -8,4 +8,5 @@ public interface ItemDao {
     List<Item> getAll();
 
     List<Item> getItems(String itemGroupName);
+
 }

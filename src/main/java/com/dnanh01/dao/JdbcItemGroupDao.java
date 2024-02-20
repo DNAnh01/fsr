@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import com.dnanh01.connection.DbConnection;
@@ -69,7 +70,24 @@ public class JdbcItemGroupDao implements ItemGroupDao {
 
     @Override
     public ItemGroup getItemGroupById(Integer itemGroupId) {
-        return null;
+        ItemGroup result = null;
+        String sql = "SELECT * FROM loaihang WHERE MaLH = ? ;";
+
+        try {
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, itemGroupId);
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                result = new ItemGroup(
+                        resultSet.getInt("MaLH"),
+                        resultSet.getString("TenLH"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            SqlUtils.close(preparedStatement, resultSet);
+        }
+        return result;
     }
 
     @Override
@@ -88,5 +106,102 @@ public class JdbcItemGroupDao implements ItemGroupDao {
             SqlUtils.close(statement, resultSet);
         }
         return result;
+    }
+
+    @Override
+    public void save(ItemGroup itemGroup) {
+        /**
+         * lưu một đối tượng loại hàng vào db
+         */
+        String sql = "INSERT INTO loaihang(MaLH, TenLH) VALUES(?, ?);";
+
+        try {
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, itemGroup.getId());
+            preparedStatement.setString(2, itemGroup.getName());
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            SqlUtils.close(preparedStatement);
+        }
+    }
+
+    @Override
+    public void save(List<ItemGroup> itemGroups) {
+        /**
+         * trong trường hợp lưu hàng loạt đối tượng loại hàng vào db
+         */
+
+        String sql = "INSERT INTO LoaiHang(MaLH, TenLH)\n"
+                + "VALUES(?, ?)";
+        int batchCount = 0;
+
+        try {
+            preparedStatement = connection.prepareStatement(sql);
+            for (ItemGroup itemGroup : itemGroups) {
+                preparedStatement.setInt(1, itemGroup.getId());
+                preparedStatement.setString(2, itemGroup.getName());
+                preparedStatement.addBatch();
+
+                // Nếu số lượng câu lệnh trong batch đạt tới 100, thực thi batch
+                if (++batchCount % 100 == 0) {
+                    preparedStatement.executeBatch();
+                }
+
+                // Thực thi batch cho các câu lệnh còn lại
+                int[] affectedRows = preparedStatement.executeBatch();
+                System.out.println(">>> affectedRows >>> " + Arrays.toString(affectedRows));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            SqlUtils.close(preparedStatement);
+        }
+    }
+
+    @Override
+    public void update(ItemGroup itemGroup) {
+        String sql = "" +
+                "UPDATE loaihang SET TenLH = ? WHERE MaLH = ?;";
+        try {
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, itemGroup.getName());
+            preparedStatement.setInt(2, itemGroup.getId());
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            SqlUtils.close(preparedStatement);
+        }
+
+    }
+
+    @Override
+    public List<ItemGroup> search(String name) {
+        List<ItemGroup> results = new ArrayList<>();
+        // injection
+
+        // String sql = "SELECT * FROM LoaiHang WHERE TenLH = '" + name + "'";
+        String sql = "SELECT * FROM LoaiHang WHERE TenLH LIKE ?";
+        try {
+
+            // st = conn.createStatement();
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, "%" + name + "%");
+            // rs = st.executeQuery(sql);
+            resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                ItemGroup itemGroup = new ItemGroup(
+                        resultSet.getInt("MaLH"),
+                        resultSet.getString("TenLH"));
+                results.add(itemGroup);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            SqlUtils.close(resultSet, preparedStatement);
+        }
+        return results;
     }
 }

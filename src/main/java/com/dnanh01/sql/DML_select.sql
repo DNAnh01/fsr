@@ -34,3 +34,6 @@ GROUP_CONCAT(CONCAT(ttmh.MaMH, "-", ttmh.TenMH, "-", ttmh.SoLuong)) DanhSachMatH
 FROM ThongTinMatHang ttmh
 GROUP BY ttmh.MaLH;
 
+-- get item-group by id
+
+SELECT * FROM loaihang WHERE MaLH = 1;
