@@ -40,7 +40,7 @@ Array.prototype.map2 = function (callback) {
     return output;
 };
 
-var htmls = courses.map2(function(course) {
+var htmls = courses.map2(function (course) {
 
     return `<h2>${courses}</h2>`;
 });

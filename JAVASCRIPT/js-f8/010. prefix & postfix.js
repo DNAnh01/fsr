@@ -15,7 +15,7 @@ In this example, y is assigned the value of x after it has been incremented by 1
 The postfix operator (++ or --) is applied after the variable, like x++ or y--. It also increments or decrements the variable by 1, but it returns the original value of the variable before it was incremented or decremented. For example:
  */
 let x1 = 5;
-let y1= x1++;  // y1 is 5, x1 is 6
+let y1 = x1++;  // y1 is 5, x1 is 6
 
 /**
 In this example, y is assigned the original value of x before it was incremented by 1.

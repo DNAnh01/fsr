@@ -69,13 +69,13 @@ var depthArray = [1, 2, [3, 4], 5, 6, [7, 8, 9]];
 
 var flattenedArray = [];
 for (var i = 0; i < depthArray.length; i++) {
-    if(Array.isArray(depthArray[i])) {
-        for(var j = 0; j < depthArray[i].length; j++) {
-            flattenedArray.push(depthArray[i][j]);
-        }
-    } else {
-        flattenedArray.push(depthArray[i]);
+  if (Array.isArray(depthArray[i])) {
+    for (var j = 0; j < depthArray[i].length; j++) {
+      flattenedArray.push(depthArray[i][j]);
     }
+  } else {
+    flattenedArray.push(depthArray[i]);
+  }
 }
 
 console.log("🚀 ~ file: 52. Array Reduce() method qua vi du.js:81 ~ flattenedArray:", flattenedArray);
@@ -83,51 +83,51 @@ console.log("🚀 ~ file: 52. Array Reduce() method qua vi du.js:81 ~ flattenedA
 
 // C2: sử dụng reduce 
 
-var flatArray = depthArray.reduce(function(flatOutput, depthItem) {
-    return flatOutput.concat(depthItem);
+var flatArray = depthArray.reduce(function (flatOutput, depthItem) {
+  return flatOutput.concat(depthItem);
 }, []);
 console.log("🚀 ~ file: 52. Array Reduce() method qua vi du.js:89 ~ flatArray ~ flatArray:", flatArray)
 
 console.log('Lấy ra tất cả các khóa học và đưa vào mảng mới');
 
 var topics = [
-    {
-        topic: 'Frontend',
-        courses: [
-            {
-                id: 1,
-                title: 'HTML, CSS'
-            },
-            {
-                id: 2,
-                title: 'Javascript'
-            }
-        ]
-    },
+  {
+    topic: 'Frontend',
+    courses: [
+      {
+        id: 1,
+        title: 'HTML, CSS'
+      },
+      {
+        id: 2,
+        title: 'Javascript'
+      }
+    ]
+  },
 
-    {
-        topic: 'Backend',
-        courses: [
-            {
-                id: 1,
-                title: 'Java'
-            },
-            {
-                id: 2,
-                title: 'NodeJS'
-            }
-        ]
-    }
+  {
+    topic: 'Backend',
+    courses: [
+      {
+        id: 1,
+        title: 'Java'
+      },
+      {
+        id: 2,
+        title: 'NodeJS'
+      }
+    ]
+  }
 ];
 
 // trong trường hợp này muốn nhận kết quả sau cùng là một array nên ta đưa vào một array trống
-var newCourses = topics.reduce(function(courses, topic) {
-    return courses.concat(topic.courses);
+var newCourses = topics.reduce(function (courses, topic) {
+  return courses.concat(topic.courses);
 }, []);
 console.log("🚀 ~ file: 52. Array Reduce() method qua vi du.js:127 ~ newCourses ~ newCourses:", newCourses)
 
-var htmls = newCourses.map(function(course) {
-    return `
+var htmls = newCourses.map(function (course) {
+  return `
         <div>
             <h2>${course.title}</h2>
             <p>${course.id}</p>

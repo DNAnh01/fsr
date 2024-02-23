@@ -11,18 +11,18 @@
 // 1. Input / select
 var inputValue;
 var inputTextElement = document.querySelector('input[type="text"]');
-inputTextElement.oninput = function(e) {
+inputTextElement.oninput = function (e) {
     // console.log(e.target.value);
 };
 
 var inputCheckElement = document.querySelector('input[type="checkbox"]');
-inputCheckElement.onchange = function(e) {
+inputCheckElement.onchange = function (e) {
     console.log(e.target.checked); // true
 };
 
 
 var inputSelectElement = document.querySelector('select');
-inputSelectElement.onchange = function(e) {
+inputSelectElement.onchange = function (e) {
     console.log(e.target.value);
 };
 
@@ -30,7 +30,7 @@ inputSelectElement.onchange = function(e) {
 
 // 2. Key up / down
 
-inputTextElement.onkeyup = function(e) {
+inputTextElement.onkeyup = function (e) {
     console.log(e.which);
 
     switch (e.which) {

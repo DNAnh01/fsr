@@ -9,14 +9,14 @@
 
 showMessage();
 //1. Declaration function
-function showMessage() {  
+function showMessage() {
     console.log('Declaration function');
 };
 //2. Expression function
 // có thể đặt tên cho nó or ko
 // việc đặt tên cho expression func không có mục đích nào khác
 // ngoài việc giúp chúng ta dễ hiểu
-var showMessage2 = function () {  
+var showMessage2 = function () {
     console.log('Expression function');
 };
 
@@ -24,7 +24,7 @@ setTimeout(function autoLogin() {
 
 });
 var myObject = {
-    myFunction: function() {
+    myFunction: function () {
 
     }
 };
@@ -45,8 +45,8 @@ setTimeout(function autoLogin() {
 });
 
 var myObject = {
-    myFunction: function() {
+    myFunction: function () {
 
     }
-};  
+};
 

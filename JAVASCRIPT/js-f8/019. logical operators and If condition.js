@@ -17,15 +17,15 @@ var b = 2;
 var result = a < b;
 console.log('result: ', result);
 
-if(a < b) {
+if (a < b) {
     console.log('a < b');
 } else {
     console.log('a > b');
 }
 
-var result2 = a < b && a < 0; 
+var result2 = a < b && a < 0;
 console.log('result2: ', result2); // false là kết quả của phép so sánh thứ 2
- 
+
 // toán tử logic && chỉ trả về kết quả một trong hai vế tùy vào trường hợp xảy ra
 
 var result3 = 'A' && 'B' && 'C';

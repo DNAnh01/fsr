@@ -18,7 +18,7 @@ class Language {
         this.name = name;
         this.description = description;
     }
-    getName = function() {
+    getName = function () {
         return this.name;
     }
     getDescription = () => {

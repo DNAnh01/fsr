@@ -28,7 +28,7 @@ function getAccount() {
     var fullName = 'Nguyen Anh';
     console.log(fullName);
 }
-getAccount(); 
+getAccount();
 
 //3.  Định nghĩa hàm trong hàm?
 function showMessage() {

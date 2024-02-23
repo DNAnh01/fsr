@@ -14,19 +14,11 @@
 // innerText thì nội dung lấy được sẽ giống như nội dung hiển thị trên trình duyệt 
 // textContent thì nội dung lấy đc sẽ là nội dung text thật của nó nằm trong DOM
 
-
-
-
 // setter
-
-
 
 // sự khác nhau giữa innerText và textContent
 
-
-
-
-var headingElement  = document.querySelector('h1');
+var headingElement = document.querySelector('h1');
 // console.log("🚀 ~ file: 71. InnerText vs textContent Property.js:12 ~ headingElement:", headingElement)
 
 // sự thay đổi này xảy ra khi mà mã js được thực thi
@@ -42,6 +34,3 @@ console.log(headingElement.textContent);
         Heading
         text
  */
-
-
-

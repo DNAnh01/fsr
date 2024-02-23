@@ -23,7 +23,7 @@ function writeLog() {
     for (var param of arguments) {
         myString += `${param} --`;
     }
-    console.log(myString); 
+    console.log(myString);
 }
 
 writeLog('Hello world', 'My name is Jame', 'I\'m 22 years old'); //Hello world --My name is Jame --I'm 22 years old --

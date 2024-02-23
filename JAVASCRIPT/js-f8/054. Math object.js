@@ -17,7 +17,7 @@ console.log("🚀 ~ file: 54. Math object.js:6 ~ Math.round():", Math.round(3.14
 
 
 var random = Math.floor(Math.random() * 100); // 0-99 
- 
+
 if (random < 50) {
     console.log('No hu mau binh');
 }

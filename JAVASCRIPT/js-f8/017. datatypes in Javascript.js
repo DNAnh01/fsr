@@ -60,7 +60,7 @@ myFunction();
 var myObject = {
     name: 'Nguyen Anh',
     age: 22,
-    address: 'Quang Nam' ,
+    address: 'Quang Nam',
     myFunction: function () {
 
     }

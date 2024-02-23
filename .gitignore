@@ -1,5 +1,8 @@
 # Ignore .metadata folder
 
+.idea
+.vscode
+
 /node_modules
 
 .metadata

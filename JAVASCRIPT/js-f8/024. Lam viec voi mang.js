@@ -42,7 +42,7 @@ console.log(languages.shift()); //Javascript
 
 console.log([].shift()); //undefined
 
-console.log(['1', '2', '3'].unshift('unshift')); 
+console.log(['1', '2', '3'].unshift('unshift'));
 
 
 

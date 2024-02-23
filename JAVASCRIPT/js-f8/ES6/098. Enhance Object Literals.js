@@ -12,10 +12,11 @@ var price = 1000;
 var course = {
     name,
     price,
-    getName() {  
+    getName() {
         return name;
     }
 };
 console.log(course.getName());
+
 
 

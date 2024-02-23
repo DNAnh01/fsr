@@ -11,7 +11,7 @@ function User(firstName, lastName, avatar) {
     this.firstName = firstName;
     this.lastName = lastName;
     this.avatar = avatar;
-    this.getName = function() {
+    this.getName = function () {
         return `${this.firstName} ${this.lastName}`
     }
 }
@@ -19,7 +19,7 @@ function User(firstName, lastName, avatar) {
 // giúp thêm thuộc tính ở bên ngoài hàm constructor 
 // và nó sẽ nằm trong __proto__
 User.prototype.className = 'F8';
-User.prototype.getClassName = function () {  
+User.prototype.getClassName = function () {
     return this.className;
 }
 

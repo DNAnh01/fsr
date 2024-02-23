@@ -12,7 +12,7 @@
 
 var h1Element = document.querySelector('h1');
 
-document.querySelector('h1').onclick = function() {
+document.querySelector('h1').onclick = function () {
     console.log(Math.round(Math.random() * 99) + 1);
 };
 
