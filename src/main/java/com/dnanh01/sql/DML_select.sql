@@ -37,3 +37,20 @@ GROUP BY ttmh.MaLH;
 -- get item-group by id
 
 SELECT * FROM loaihang WHERE MaLH = 1;
+
+-- MaNV, TenNV, Email, SDT, DiaChi, MaCV, MatKhau
+INSERT INTO nhanvien(MaNV, TenNV, Email, SDT, DiaChi, MaCV, MatKhau)
+VALUES(8, "Đỗ Nguyên Ánh", "donguyenanh2k1@gmail.com", "0123456789", "Liên Chiểu - Đà Nẵng");
+
+-- NhanVien: login
+
+SELECT 
+nv.MaNV,
+nv.TenNV,
+nv.Email,
+nv.SDT, 
+nv.DiaChi, 
+nv.MaCV
+FROM nhanvien nv 
+WHERE nv.Email = "com1.default.tp@gmail.com"
+AND nv.MatKhau = "827ccb0eea8a706c4c34a16891f84e7b";
