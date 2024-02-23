@@ -1,4 +1,12 @@
 # Ignore .metadata folder
+
+
+# idea
+/.vscode
+/.idea
+test.sql
+
+
 .metadata
 target
 */target

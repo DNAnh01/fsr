@@ -14,7 +14,7 @@ public class HibernateProvider {
 		if (sessionFactory == null) {
 			Configuration configuration = new Configuration();
 			sessionFactory = configuration.configure("hibernate.configuration.xml")
-										  .buildSessionFactory();
+					.buildSessionFactory();
 		}
 		return sessionFactory;
 	}
