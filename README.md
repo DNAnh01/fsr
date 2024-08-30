@@ -1,6 +1,8 @@
 ### Thread
 
-![life cycle thread in java](https://b3019442.smushcdn.com/3019442/wp-content/uploads/2023/08/java-thread-lifecycle-2.jpg?lossy=1&strip=1&webp=1)
+[![thread life cycle in java](https://ytcards.demolab.com/?id=UTUyJFvXeK4&title=thread+life+cycle+in+java&lang=en&timestamp=1598847600&background_color=%230d1117&title_color=%23ffffff&stats_color=%23dedede&max_title_lines=1&width=400&border_radius=5&duration=498 "thread life cycle in java")](https://youtu.be/UTUyJFvXeK4?si=RcJIC-lU6LitQajQ)
+
+
 
 Một số điều kiện cơ bản và quan trọng về quản lý luồng trong java 11:
 
